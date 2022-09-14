@@ -1,0 +1,12 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @booster.name %></h1>
+  <p class="lead">
+    <strong>
+      prix :
+    </strong> 
+    <%= @booster.price.to_s + '€' %>
+  </p>
+  <%= link_to 'Retour', boosters_path, class:'btn btn-secondary' %>
+  <%= link_to 'Modifier', edit_booster_path(@booster), class:"btn btn-dark" %>
+  <%= link_to 'Supprimer', @booster, method: :delete, data: { confirm: 'Êtes vous sûr ?' }, class: 'btn btn-danger' %>
+</div>

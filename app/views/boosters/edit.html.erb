@@ -1,0 +1,7 @@
+<h1>Modifier Booster</h1>
+
+<%= render 'form', booster: @booster %>
+
+<%= link_to 'Retour', boosters_path, class:'btn btn-secondary' %>
+<%= link_to 'Voir', @booster, class: 'btn btn-primary' %>
+<%= link_to 'Supprimer', @booster, method: :delete, data: { confirm: 'Êtes vous sûr ?' }, class: 'btn btn-danger' %>

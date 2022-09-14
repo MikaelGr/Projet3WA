@@ -1,0 +1,30 @@
+<h3>Combat</h3>
+<p>
+  Votre carte a 
+  <span id="yourHp"><%= @current_user_card.hp %></span> hp, 
+  <span id="yourAtk"><%= @current_user_card.atk %></span> atk, 
+  <span id="yourDef"><%= @current_user_card.def %></span> def
+</p>
+<p>
+  La carte de l'adversaire a 
+  <span id="ennemyHp"><%= @other_user_card.hp %></span> hp, 
+  <span id="ennemyAtk"><%= @other_user_card.atk %></span> atk, 
+  <span id="ennemyDef"><%= @other_user_card.def %></span> def
+</p>
+<h3>Pour savoir qui commence :</h3>
+<input type="radio" name="you_start" id="heads" value="0">
+<label for="heads">Pile</label>
+<input type="radio" name="you_start" id="tails" value="1">
+<label for="tails">Face</label>
+<button id="button" type="button"> 
+  Commencer le combat
+</button>
+<div>
+  <div id="result"></div>
+  <div id="win" hidden>
+    <%= image_tag ('win.gif'), width: '190px', height: '170px' %>
+  </div>
+  <div id="lose" hidden>
+    <%= image_tag ('lose.gif') %>
+  </div>
+</div>

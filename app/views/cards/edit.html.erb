@@ -1,0 +1,7 @@
+<h1>Editing Card</h1>
+
+<%= render 'form', card: @card %>
+
+<%= link_to 'Retour', cards_path, class:'btn btn-secondary' %>
+<%= link_to 'Voir', @card, class: 'btn btn-primary' %>
+<%= link_to 'Supprimer', @card, method: :delete, data: { confirm: 'Êtes vous sûr ?' }, class: 'btn btn-danger' %>

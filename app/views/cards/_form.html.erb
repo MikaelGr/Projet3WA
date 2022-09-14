@@ -1,0 +1,56 @@
+<%= form_with(model: card, local: true) do |form| %>
+  <% if card.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(card.errors.count, "error") %> prohibited this card from being saved:</h2>
+
+      <ul>
+      <% card.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field form-group">
+    <%= form.label :name %>
+    <%= form.text_field :name, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :category_id, "categorie :" %><br>
+    <%= form.select :category_id, collection: Category.all.collect{ |c| [c.name, c.id] } %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :booster_id, "booster :" %><br>
+    <%= form.select :booster_id, collection: Booster.all.collect{ |b| [b.name, b.id] } %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :rarity, "rareté :" %><br>
+    <%= form.select :rarity, ["commune", "rare", "épique", "légendaire"], class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :atk %>
+    <%= form.number_field :atk, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :def %>
+    <%= form.number_field :def, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :hp %>
+    <%= form.number_field :hp, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.number_field :user_id, id: :card_user_id, value: current_user.id, type: :hidden, class:"form-control" %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit class:'btn btn-success' %>
+  </div>
+<% end %>

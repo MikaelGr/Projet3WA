@@ -1,0 +1,33 @@
+<% if user_signed_in? %>
+  <h1>Boosters</h1>
+
+  <table class="table table-striped table-bordered table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th>Nom</th>
+        <th>Prix</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @boosters.each do |booster| %>
+        <tr>
+          <td>
+            <%= link_to booster.name, booster %>
+          </td>
+          <td><%= booster.price.to_s + '€' %></td>
+          <td><%= link_to 'Voir', booster, class: 'btn btn-outline-primary btn-sm' %></td>
+          <td><%= link_to 'Modifier', edit_booster_path(booster), class: 'btn btn-outline-secondary btn-sm' %></td>
+          <td><%= link_to 'Supprimer', booster, method: :delete, data: { confirm: 'Êtes vous sûr ?' }, class: 'btn btn-outline-danger btn-sm' %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+
+  <%= link_to 'Nouveau Booster', new_booster_path, class:"btn btn-dark" %>
+<% else %>
+  Veuillez vous inscrire ou vous connecter  
+<% end %>

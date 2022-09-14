@@ -1,0 +1,9 @@
+<h2>Sélectionnez votre adversaire</h2>
+<form action="" method="get">
+  <select name="user">
+    <% @users.each do |user| %>
+      <option value=<%= user.id %>><%= user.email %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Suivant">
+</form>

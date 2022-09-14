@@ -1,0 +1,15 @@
+<h3>Sélectionnez votre carte</h3>
+<form action="" method="get">
+  <select name="current_user_card">
+    <% current_user.cards.each do |cuc| %>
+      <option value=<%= cuc.id %>><%= cuc.name %></option>
+    <% end %>
+  </select>
+  <h3>Sélectionnez la carte de votre adversaire</h3>
+  <select name="other_user_card">
+    <% @user.cards.each do |ouc| %>
+      <option value=<%= ouc.id %>><%= ouc.name %></option>
+    <% end %>
+  </select>
+  <input type="submit" value="Suivant">
+</form>

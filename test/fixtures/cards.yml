@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  rarity: 1
+  atk: 1
+  def: 1
+  hp: 1
+
+two:
+  name: MyString
+  rarity: 1
+  atk: 1
+  def: 1
+  hp: 1

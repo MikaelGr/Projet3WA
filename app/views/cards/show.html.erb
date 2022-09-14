@@ -1,0 +1,12 @@
+<div class="jumbotron">
+  <h1 class="display-4"><%= @card.name %></h1>
+  <p class="lead">
+    rareté : <%= @card.rarity %> |
+    atk : <%= @card.atk %> |
+    def : <%= @card.def %> |
+    hp : <%= @card.hp %>
+  </p>
+  <%= link_to 'Retour', cards_path, class:'btn btn-secondary' %>
+  <%= link_to 'Modifier', edit_card_path(@card), class:"btn btn-dark" %>
+  <%= link_to 'Supprimer', @card, method: :delete, data: { confirm: 'Êtes vous sûr ?' }, class: 'btn btn-danger' %>
+</div>
