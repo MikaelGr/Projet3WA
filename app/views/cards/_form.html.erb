@@ -17,17 +17,17 @@
   </div>
 
   <div class="field form-group">
-    <%= form.label :category_id, "categorie :" %><br>
+    <%= form.label :category_id, "categorie :" %>
     <%= form.select :category_id, collection: Category.all.collect{ |c| [c.name, c.id] } %>
   </div>
 
   <div class="field form-group">
-    <%= form.label :booster_id, "booster :" %><br>
+    <%= form.label :booster_id, "booster :" %>
     <%= form.select :booster_id, collection: Booster.all.collect{ |b| [b.name, b.id] } %>
   </div>
 
   <div class="field form-group">
-    <%= form.label :rarity, "rareté :" %><br>
+    <%= form.label :rarity, "rareté :" %>
     <%= form.select :rarity, ["commune", "rare", "épique", "légendaire"], class:"form-control" %>
   </div>
 
