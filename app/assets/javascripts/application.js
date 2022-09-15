@@ -16,7 +16,9 @@
 //= require_tree .
 
 document.addEventListener("DOMContentLoaded", function(event) {
+  // Si la page contient le boutton "Commencer le combat"
   if (document.body.contains(document.getElementById("button"))) {
+    // Initialisation des variables
     let button = document.getElementById("button");
     let result = document.getElementById("result");
     let heads = document.getElementById("heads");
@@ -35,6 +37,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 
     button.addEventListener("click", whoStart);
 
+    // Fonction pour déterminer qui commence
     async function whoStart() {
       if (!heads.checked && !tails.checked) {
         alert('Veuillez choisir pile ou face')
@@ -61,7 +64,9 @@ document.addEventListener("DOMContentLoaded", function(event) {
       }
     }  
 
+    // Fonction pour le combat
     async function startFight() {
+      // Tant qu'une des carte a des points de vie
       while (yourHp > 0 && ennemyHp > 0) {
         inflictedDamage = yourAtk - ennemyDef
         receivedDamage = ennemyAtk - yourDef
@@ -134,10 +139,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
       });
     }
 
+    // Enlève l'attribut hidden de la div pour afficher le gif de victoire
     function win_gif() {
       win.hidden = false
     }
 
+    // Enlève l'attribut hidden de la div pour afficher le gif de défaite
     function lose_gif() {
       lose.hidden = false
     }

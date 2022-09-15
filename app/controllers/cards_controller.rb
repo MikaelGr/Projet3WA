@@ -67,7 +67,6 @@ class CardsController < ApplicationController
   end
 
   def fight
-    @users = User.all.reject{|user| user == current_user}
     if params[:current_user_card] && params[:other_user_card]
       @current_user_card = Card.find(params[:current_user_card])
       @other_user_card = Card.find(params[:other_user_card])
@@ -77,6 +76,8 @@ class CardsController < ApplicationController
       @user = User.find(params[:user])
       return render 'cards/fight/select_cards'
     end
+    # Prends tous les users qui ont une carte avec au moins un point en attaque, et fait un uniq dessus pour enlever les doublons
+    @users = Card.all.where("atk>=?",1).map{|card| card.user}.reject{|user| user == current_user}.uniq
     return render 'cards/fight/select_user' unless params[:user]
   end
 
