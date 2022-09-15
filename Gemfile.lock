@@ -84,6 +84,7 @@ GEM
     erubi (1.11.0)
     execjs (2.8.1)
     ffi (1.15.5)
+    ffi (1.15.5-x64-mingw32)
     globalid (1.0.0)
       activesupport (>= 5.0)
     i18n (1.12.0)
@@ -111,6 +112,8 @@ GEM
     nio4r (2.5.8)
     nokogiri (1.13.8)
       mini_portile2 (~> 2.8.0)
+      racc (~> 1.4)
+    nokogiri (1.13.8-x64-mingw32)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     public_suffix (5.0.0)
@@ -182,6 +185,7 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.5.0)
       mini_portile2 (~> 2.8.0)
+    sqlite3 (1.5.0-x64-mingw32)
     thor (1.2.1)
     thread_safe (0.3.6)
     tilt (2.0.11)
@@ -190,6 +194,8 @@ GEM
     turbolinks-source (5.2.0)
     tzinfo (1.2.10)
       thread_safe (~> 0.1)
+    tzinfo-data (1.2022.3)
+      tzinfo (>= 1.0.0)
     uglifier (4.2.0)
       execjs (>= 0.3.0, < 3)
     warden (1.2.9)
@@ -207,6 +213,7 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
